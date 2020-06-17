@@ -16,4 +16,4 @@ author: 'JRR Tolkien',
 pages: 700
 }];
 
-export {Books}
+export {Books};
