@@ -1,4 +1,8 @@
 <h2 align="center">Some Books</h2>
+<mat-form-field appearance="fill">
+    <mat-label>Filter</mat-label>
+    <input (keyup)="applyFilter($event.target.value)" placeholder="Ex. ium" matInput>
+  </mat-form-field>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z10" align="center" width="80%">
     <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef> Title </th>

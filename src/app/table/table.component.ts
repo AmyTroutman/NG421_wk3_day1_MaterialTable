@@ -4,6 +4,7 @@ import { IBook } from '../interface/ibook';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -20,6 +21,11 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.bookService.getBooks());
     this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(filterValue: string) {
+    // const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

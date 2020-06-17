@@ -6,14 +6,14 @@ author: 'JRR Tolkien',
 pages: 700
 },
 {
-title: 'The Hobbit',
-author: 'JRR Tolkien',
-pages: 700
+title: 'Isaac\'s Storm',
+author: 'Erik Larson',
+pages: 543
 },
 {
-title: 'The Hobbit',
-author: 'JRR Tolkien',
-pages: 700
+title: 'Romeo and/or Juliet',
+author: 'Ryan North',
+pages: 637
 }];
 
 export {Books};
