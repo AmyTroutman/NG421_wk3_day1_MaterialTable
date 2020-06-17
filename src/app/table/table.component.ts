@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { BookService } from '../service/book.service';
+import { IBook } from '../interface/ibook';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-table',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  displayedColumns: string[] = ['title', 'author', 'pages'];
+  dataSource: MatTableDataSource<IBook>;
+
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource(this.bookService.getBooks());
+    this.dataSource.sort = this.sort;
   }
 
 }
